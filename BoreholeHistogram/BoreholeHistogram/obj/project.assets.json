@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
+      "projectUniqueName": "F:\\MyGit\\leaningCode\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
       "projectName": "BoreholeHistogram",
-      "projectPath": "F:\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
+      "projectPath": "F:\\MyGit\\leaningCode\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
       "packagesPath": "C:\\Users\\210342\\.nuget\\packages\\",
-      "outputPath": "F:\\BoreholeHistogram\\BoreholeHistogram\\obj\\",
+      "outputPath": "F:\\MyGit\\leaningCode\\BoreholeHistogram\\BoreholeHistogram\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\DX\\dx\\Offline Packages"
