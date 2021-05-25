@@ -1,0 +1,1773 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartGeoLogical.Render</name>
+    </assembly>
+    <members>
+        <member name="T:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML">
+            <summary>
+            样式树XML文件，封装对样式树的操作
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.#ctor">
+            <summary>
+            初始化一个XML文档
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.CreateElement(SmartGeoLogical.Render.Bore.BoreStyle.Item,System.Xml.XmlDocument,System.Xml.XmlNode)">
+            <summary>
+            根据已知布局元素（Item）往XML文档添加布局元素
+            </summary>
+            <param name="item">已知布局元素</param>
+            <param name="xmlDocument">XML文档</param>
+            <param name="parentNode">插入节点</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.AddNode(System.Xml.XmlDocument,System.Xml.XmlNode,System.String)">
+            <summary>
+            为父节点添加一个无文本子节点
+            </summary>
+            <param name="xmlDocument">XML文档</param>
+            <param name="parentNode">插入节点</param>
+            <param name="name">标签名</param>
+            <returns>子节点，xmlnode类型</returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.AddNode(System.Xml.XmlDocument,System.Xml.XmlNode,System.String,System.String)">
+            <summary>
+            重载，为父节点添加一个带文本的子节点
+            </summary>
+            <param name="xmlDocument">xml文档</param>
+            <param name="parentNode">父节点</param>
+            <param name="name">标签名</param>
+            <param name="text">标签内容</param>
+            <returns>子节点，xmlnode类型</returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.SetLocationAttribute(SmartGeoLogical.Render.Bore.BoreStyle.CtrLocation,System.Xml.XmlElement)">
+            <summary>
+            给Item节点设置location属性，该属性为行、列、行跨、列跨
+            </summary>
+            <param name="location">位置属性</param>
+            <param name="node">插入节点</param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.SetParameterAttribute(System.Collections.Generic.List{SmartGeoLogical.Render.Bore.Column.Parameter},System.Xml.XmlDocument,System.Xml.XmlElement)">
+            <summary>
+            给Item节点设置parameters子节点，再根据参数列设置次级子节点
+            </summary>
+            <param name="parameters">参数列</param>
+            <param name="xmlDocument">xml文档</param>
+            <param name="node">插入节点</param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.SetSubElementLayout(SmartGeoLogical.Render.Bore.BoreStyle.Layout,System.Xml.XmlDocument,System.Xml.XmlElement)">
+            <summary>
+            插入（下一级元素的）布局节点及设置其布局属性
+            </summary>
+            <param name="layout">下一级元素布局</param>
+            <param name="xmlDocument">XML文档</param>
+            <param name="node">插入节点</param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.SetVPLayoutValue(SmartGeoLogical.Render.Bore.BoreStyle.Layout,System.Xml.XmlElement)">
+            <summary>
+            在垂直布局节点中设置垂直布局的属性
+            </summary>
+            <param name="layout"></param>
+            <param name="node"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.SetHPLayoutValue(SmartGeoLogical.Render.Bore.BoreStyle.Layout,System.Xml.XmlElement)">
+            <summary>
+            在水平布局节点中设置水平布局的属性
+            </summary>
+            <param name="layout"></param>
+            <param name="node"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.BoreStyleTree.StyleTreeXML.SaveStyleTreeXML(System.Xml.XmlDocument,System.String)">
+            <summary>
+            保存样式树xml文件
+            </summary>
+            <param name="xmlDocument">xml文档</param>
+            <param name="SavePath">保存路径</param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.BeginTime">
+            <summary>
+            岩性描述
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SmartGeoLogical.Render.Bore.BeginTime.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)" -->
+        <member name="M:SmartGeoLogical.Render.Bore.BeginTime.Draw(System.Drawing.Graphics,SmartGeoLogical.Render.DrawInterface.BoreData.BoreData)">
+            <summary>
+            绘制描述信息
+            </summary>
+            <param name="g"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.BeginTime.GeneratePrimitiveBottoms(System.Collections.Generic.List{SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo})">
+            <summary>
+            生成初始底界
+            </summary>
+            <param name="layers"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.BeginTime.GenerateBottoms(System.Collections.Generic.List{SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo},System.Drawing.Graphics)">
+            <summary>
+            生成底界
+            </summary>
+            <param name="layers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.BeginTime.drawDescription(SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo,System.Int32,System.Drawing.Graphics)">
+            <summary>
+            分层对描述信息进行绘制
+            </summary>
+            <param name="layer"></param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.BoreStyle.BoreStyle">
+            <summary>
+            钻孔样式类
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.BoreStyle.BoreStyle.#ctor(System.Collections.Generic.List{SmartGeoLogical.Render.Bore.BoreStyle.Item},SmartGeoLogical.Render.Bore.BoreStyle.Layout)">
+            <summary>
+            钻孔样式类构造函数
+            </summary>
+            <param name="items">子控件集合</param>
+            <param name="boreLayout">布局</param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.BoreStyle.CtrLocation">
+            <summary>
+             控件相对于布局的位置信息
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.BoreStyle.Item.#ctor(System.String,System.String,System.Collections.Generic.List{SmartGeoLogical.Render.Bore.Column.Parameter},SmartGeoLogical.Render.Bore.BoreStyle.CtrLocation,SmartGeoLogical.Render.Bore.BoreStyle.Layout)">
+            <summary>
+            控件构造函数
+            </summary>
+            <param name="name">名称</param>
+            <param name="type">类别</param>
+            <param name="parameters">参数</param>
+            <param name="location">当前控件占所在布局的位置</param>
+            <param name="itemLayout">子控件布局</param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.BoreStyle.LayOutType">
+            <summary>
+            布局类型：水平、垂直、格网
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.Bore.BoreStyle.Layout.VPunittype">
+            <summary>
+            布局单位类型储存，1为px，0为相对
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.Bore.BoreStyle.Layout.HPunittype">
+            <summary>
+            布局单位类型储存，1为px，0为相对
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.BoreStyle.Layout.#ctor(SmartGeoLogical.Render.Bore.BoreStyle.LayOutType,System.Single[],System.Single[],System.Int32[],System.Int32[])">
+            <summary>
+            布局构造函数
+            </summary>
+            <param name="type">布局类型</param>
+            <param name="verticalPercent">各行所占布局比例，适用水平布局、格网布局</param>
+            <param name="horizontalPercent">各列所占布局比例，适用垂直布局、格网布局</param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.Bar">
+            <summary>
+            填充图
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Bar.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            填充图构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Bar.Max">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Bar.Min">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Bar.IsFillFromL2R">
+            <summary>
+            是否是从左向右填充
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Bar.DrawGrid">
+            <summary>
+            是否绘制格网
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Bar.FillBackgroundColor">
+            <summary>
+            背景色
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Bar.FillOutLineColor">
+            <summary>
+            外框色
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Bar.BarFillType">
+            <summary>
+            填充类型
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Bar.BarGridStyle">
+            <summary>
+            格网样式
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Bar.Draw(System.Drawing.Graphics,SmartGeoLogical.Render.DrawInterface.BoreData.BoreData)">
+            <summary>
+            绘制方法
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Bar.GetRectsPosition(System.Collections.Generic.List{SmartGeoLogical.Render.DrawInterface.BoreData.SamplingInfo},System.Single,System.Single)">
+            <summary>
+            获取样点位置列表
+            </summary>
+            <param name="sampling"></param>
+            <param name="boreholeElevation"></param>
+            <param name="totalDepth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.BarValue.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+            <param name="name"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.BarValue.FontD">
+            <summary>
+            字体
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.BarValue.HorizontalAlignStyle">
+            <summary>
+            水平对齐方式
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.CreateControl(SmartGeoLogical.Render.DrawInterface.DrillGlobal,SmartGeoLogical.Render.Bore.BoreStyle.Item,SmartGeoLogical.Render.Bore.BoreStyle.Layout,System.Drawing.RectangleF)">
+            <summary>
+            通过Item创建相应的Control
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.CalculateClienteRect(SmartGeoLogical.Render.Bore.BoreStyle.Layout,SmartGeoLogical.Render.Bore.BoreStyle.CtrLocation,System.Drawing.RectangleF)">
+            <summary>
+            计算控件的绝对位置
+            </summary>
+            <param name="parentLayout"></param>
+            <param name="ctrLocation"></param>
+            <param name="parentRect"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.GetPercentLength(System.Single[],System.Single)">
+            <summary>
+            总长度减去固定长度
+            </summary>
+            <param name="PercentOrPixel"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeControl(System.String,System.String)">
+            <summary>
+            根据传递的名称，类型构建控件
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeDescription(System.String)">
+            <summary>
+            构造描述控件
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeText(System.String)">
+            <summary>
+            构造文本控件
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakePicture(System.String)">
+            <summary>
+            构造图片控件
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeLithority(System.String)">
+            <summary>
+            构造岩性纹理控件
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeBarValue(System.String)">
+            <summary>
+            构造填充图值控件
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeBar(System.String)">
+            <summary>
+            构造填充图
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakePanel(System.String)">
+            <summary>
+            构造面板
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeCurve(System.String)">
+            <summary>
+            构造曲线
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeDepth(System.String)">
+            <summary>
+            构造深度控件
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeLabel(System.String)">
+            <summary>
+            构造文本
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.MakeWithPlugin(System.String,System.String)">
+            <summary>
+            通过插件构造控件
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.SetParameter(SmartGeoLogical.Render.DrawInterface.Control,System.Collections.Generic.List{SmartGeoLogical.Render.Bore.Column.Parameter})">
+            <summary>
+            改变控件部分默认参数
+            </summary>
+            <param name="ctr"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.SetProperty(System.Object,System.Object)">
+            <summary>
+            设置单个参数
+            </summary>
+            <param name="obj"></param>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.GetValueByType(System.Object,System.String)">
+            <summary>
+            根据不同的类型将value转化为相应的值
+            </summary>
+            <param name="value"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.ControlFactory.GetFont(System.Object)">
+            <summary>
+            构造字体
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.Curve">
+            <summary>
+            曲线
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Curve.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            曲线构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Curve.Max">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Curve.Min">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Curve.IsFillFromL2R">
+            <summary>
+            是否从左向右填充
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Curve.IsDrawFromL2R">
+            <summary>
+            是否从左向右绘制
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Curve.IsDrawCenter">
+            <summary>
+            是否中间开始绘制
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Curve.DrawGrid">
+            <summary>
+            是否绘制格网
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Curve.CurveGridStyle">
+            <summary>
+            曲线格网样式
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Curve.Draw(System.Drawing.Graphics,SmartGeoLogical.Render.DrawInterface.BoreData.BoreData)">
+            <summary>
+            绘制方法
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Curve.GetPointsPosition(System.Collections.Generic.List{SmartGeoLogical.Render.DrawInterface.BoreData.SamplingInfo},System.Single,System.Single)">
+            <summary>
+            获取样点位置列表
+            </summary>
+            <param name="sampling"></param>
+            <param name="boreholeElevation"></param>
+            <param name="totalDepth"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.CurveStyle">
+            <summary>
+            格网样式，格网的聚合类
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.CurveStyle.#ctor(SmartGeoLogical.Render.DrawInterface.DrillGlobal)">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.CurveStyle.CurveFillType">
+            <summary>
+            曲线填充类型
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.CurveStyle.CurveSymbol">
+            <summary>
+            曲线符号
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.CurveStyle.CurveLineStyle">
+            <summary>
+            曲线线样式
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.CurveStyle.PlotStyle">
+            <summary>
+            曲线图样式
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.CurveStyle.DrawSinglePoints(System.Drawing.PointF[],System.Drawing.Graphics,System.Drawing.Brush,System.Drawing.Pen)">
+            <summary>
+               画散点图
+            </summary>
+            <param name="w"></param>
+            <param name="pf"></param>
+            <param name="g"></param>
+            <param name="mybrush"></param>
+            <param name="mypen"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.CurveStyle.DrawPool(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.PointF[])">
+            <summary>
+             画杆状图
+            </summary>
+            <param name="w"></param>
+            <param name="g"></param>
+            <param name="mypen"></param>
+            <param name="pf"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.CurveStyle.DrawFill(System.Drawing.PointF[],System.Drawing.Graphics)">
+            <summary>
+               画填充图
+            </summary>
+            <param name="pf"></param>
+            <param name="w"></param>
+            <param name="g"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.CurveStyle.GetMaxWidth(System.Drawing.PointF[])">
+            <summary>
+            将最大横向偏移值设为颜色终止位置
+            </summary>
+            <param name="pf"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.CurveSymbol">
+            <summary>
+            曲线符号
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.CurveSymbol.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.LineStyle">
+            <summary>
+            线样式
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.LineStyle.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.Depth">
+            <summary>
+            深度
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Depth.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            深度构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Depth.FontD">
+            <summary>
+            字体
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Depth.NumDisplayPosition">
+            <summary>
+            数字显示位置
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Depth.NumDisplayAngle">
+            <summary>
+            数字显示角度
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Depth.ValidNum">
+            <summary>
+            有效数字
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Depth.LargeScale">
+            <summary>
+            大格标尺步长
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Depth.SmallScale">
+            <summary>
+            小格标尺步长
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Depth.LargeRulePosition">
+            <summary>
+            大格标尺位置
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Depth.SmallRulePosition">
+            <summary>
+            小格标尺位置
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Depth.FontColor">
+            <summary>
+            字体颜色
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Depth.DrawSScale(System.Drawing.Graphics,System.Single)">
+            <summary>
+            绘制小尺度标尺及数值
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Depth.DrawLScale(System.Drawing.Graphics,System.Single)">
+            <summary>
+            绘制大尺度标尺及数值
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Depth.DrawCenterLine(System.Drawing.Graphics)">
+            <summary>
+            绘制中线
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.Description">
+            <summary>
+            岩性描述
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SmartGeoLogical.Render.Bore.Column.Description.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)" -->
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Description.Draw(System.Drawing.Graphics,SmartGeoLogical.Render.DrawInterface.BoreData.BoreData)">
+            <summary>
+            绘制描述信息
+            </summary>
+            <param name="g"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Description.GeneratePrimitiveBottoms(System.Collections.Generic.List{SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo})">
+            <summary>
+            生成初始底界
+            </summary>
+            <param name="layers"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Description.GenerateBottoms(System.Collections.Generic.List{SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo},System.Drawing.Graphics)">
+            <summary>
+            生成底界
+            </summary>
+            <param name="layers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Description.drawDescription(SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo,System.Int32,System.Drawing.Graphics)">
+            <summary>
+            分层对描述信息进行绘制
+            </summary>
+            <param name="layer"></param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.FillType">
+            <summary>
+            填充类型，为Bar和Curve的聚集类
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.FillType.FigFillMode">
+            <summary>
+            填充模式：单色填充/基于值的填充
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.FillType.SingleColor">
+            <summary>
+            单填充色
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.FillType.ValueBasedBegin">
+            <summary>
+            基于值的填充起始色
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.FillType.ValueBasedEnd">
+            <summary>
+            基于值的填充终止色
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.FillType.#ctor(SmartGeoLogical.Render.DrawInterface.FillMode,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            填充类型构造函数
+            </summary>
+            <param name="figFillMode">填充模式，单填充/基于值的填充</param>
+            <param name="singleColor">单填充色</param>
+            <param name="valueBasedBegin">值填充起始色</param>
+            <param name="valueBasedEnd">值填充终止色</param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.FillType.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.GridStyle">
+            <summary>
+            格网样式， 为Bar和Curve的聚合类
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.GridStyle.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.GridStyle.#ctor(System.Boolean,System.Boolean,SmartGeoLogical.Render.Bore.Column.GridControl,SmartGeoLogical.Render.Bore.Column.GridControl)">
+            <summary>
+            格网岩石构造函数
+            </summary>
+            <param name="drawHorizontalGrid">是否绘制水平格网</param>
+            <param name="drawVerticalGrid">是否绘制垂直格网</param>
+            <param name="horizontalControl">水平格网样式</param>
+            <param name="verticalControl">垂直格网样式</param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.GridStyle.#ctor(System.Boolean,System.Boolean,SmartGeoLogical.Render.Bore.Column.GridControl,SmartGeoLogical.Render.Bore.Column.GridControl,System.Boolean,System.Int32)">
+            <summary>
+            格网样式构造函数
+            </summary>
+            <param name="drawHorizontalGrid">是否绘制水平格网</param>
+            <param name="drawVerticalGrid">是否绘制垂直格网</param>
+            <param name="horizontalControl">水平格网样式</param>
+            <param name="verticalControl">垂直格网样式</param>
+            <param name="isLogCord">是否对数坐标系</param>
+            <param name="logBase">对数底</param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridStyle.DrawHorizontalGrid">
+            <summary>
+            是否绘制水平格网
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridStyle.DrawVerticalGrid">
+            <summary>
+            是否绘制垂直格网
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridStyle.HorizontalControl">
+            <summary>
+            水平格网样式
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridStyle.VerticalControl">
+            <summary>
+            垂直格网样式
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridStyle.IsLogCord">
+            <summary>
+            是否对数坐标系
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridStyle.LogBase">
+            <summary>
+            对数底
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.GridControl">
+            <summary>
+            格网控制
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.GridControl.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.GridControl.#ctor(System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            格网控制构造函数
+            </summary>
+            <param name="drawLargeScaleGrid">是否绘制大尺度格网</param>
+            <param name="drawSmallScaleGrid">是否绘制小尺度格网</param>
+            <param name="largeScaleValue">大尺度格网值</param>
+            <param name="smallScaleValue">小尺度格网值</param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.LargePenWidth">
+            <summary>
+            大尺度线宽
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.SmallPenWidth">
+            <summary>
+            小尺度线宽
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.LargeDashStyle">
+            <summary>
+            大尺度线型
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.SmallDashStyle">
+            <summary>
+            小尺度线型
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.DrawLargeScaleGrid">
+            <summary>
+            是否绘制大尺度格网
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.DrawSmallScaleGrid">
+            <summary>
+            是否绘制小尺度格网
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.LargeScaleValue">
+            <summary>
+            大尺度格网值
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.SmallScaleValue">
+            <summary>
+            小尺度格网值
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.LargeLineColor">
+            <summary>
+            大尺度线色
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.GridControl.SmallLineColor">
+            <summary>
+            小尺度线色
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.GridControl.SetLargePen">
+            <summary>
+            设置大尺度线型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.GridControl.SetSmallPen">
+            <summary>
+            设置小尺度线型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Label.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            标签构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Label.FontD">
+            <summary>
+            字体
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Label.Align">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Label.FontColor">
+            <summary>
+            字体颜色
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Label.DisplayTyoe">
+            <summary>
+            信息显示方式
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.Lithority">
+            <summary>
+            岩性纹理
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Lithority.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            岩性纹理构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Lithority.ProfileCurve">
+            <summary>
+            附属曲线名
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Lithority.HasProfileCurve">
+            <summary>
+            是否包含附属曲线
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Lithority.ProfileMaxValue">
+            <summary>
+            附属曲线最大值
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Lithority.ProfileMinValue">
+            <summary>
+            附属曲线最小值
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Lithority.DrawLayer(SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo,System.Single,System.Single,System.Drawing.Graphics,System.String)">
+            <summary>
+            绘制地层
+            </summary>
+            <param name="layer"></param>
+            <param name="totalDepth"></param>
+            <param name="holeElevation"></param>
+            <param name="g"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Lithority.RepeatImag(System.Single,System.Drawing.Image)">
+            <summary>
+            图片重复填充的方式
+            </summary>
+            <param name="layerHeight"></param>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.LithText">
+            <summary>
+            岩性描述类
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SmartGeoLogical.Render.Bore.Column.LithText.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)" -->
+        <member name="M:SmartGeoLogical.Render.Bore.Column.LithText.Draw(System.Drawing.Graphics,SmartGeoLogical.Render.DrawInterface.BoreData.BoreData)">
+            <summary>
+            绘制描述信息
+            </summary>
+            <param name="g"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.LithText.GeneratePrimitiveBottoms(System.Collections.Generic.List{SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo})">
+            <summary>
+            生成初始底界
+            </summary>
+            <param name="layers"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.LithText.GenerateBottoms(System.Collections.Generic.List{SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo},System.Drawing.Graphics)">
+            <summary>
+            生成底界
+            </summary>
+            <param name="layers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.LithText.drawDescription(SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo,System.Int32,System.Drawing.Graphics)">
+            <summary>
+            分层对描述信息进行绘制
+            </summary>
+            <param name="layer"></param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.Panel">
+            <summary>
+            面板
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Panel.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            面板构造函数,默认边框黑色，底色为白，其他控件同
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.Picture">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Picture.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            图片构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.PlotHead">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.PlotHead.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            图片构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Column.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.Bore.Column.Text.underLineHeigth">
+            <summary>
+            上一个采样点的文字下边界
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Text.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            文本构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Text.FontD">
+            <summary>
+            字体
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.Text.HorizontalAlignStyle">
+            <summary>
+            水平对齐方式
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Text.Draw(System.Drawing.Graphics,SmartGeoLogical.Render.DrawInterface.BoreData.BoreData)">
+            <summary>
+            绘制描述信息
+            </summary>
+            <param name="g"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Text.DrawText(SmartGeoLogical.Render.DrawInterface.BoreData.SamplingInfo,System.Drawing.Graphics,System.Single,System.Single)">
+            <summary>
+            绘制点采样信息
+            </summary>
+            <param name="sampling"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Text.DrawNameAndValue(SmartGeoLogical.Render.DrawInterface.BoreData.SamplingInfo,System.Drawing.Graphics,System.Single,System.Single)">
+            <summary>
+            绘制  采样点名称加值的
+            </summary>
+            <param name="sample"></param>
+            <param name="g"></param>
+            <param name="boreholeElevation"></param>
+            <param name="totalDepth"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.Text.GetRectangle(System.Drawing.SizeF,System.Single@,System.Boolean)">
+            <summary>
+            获取文字的外框
+            </summary>
+            <param name="sizeF"></param>
+            <param name="verticalBegin"></param>
+            <param name="IsOver"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Column.WaterOilDescription.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+            <param name="name"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.WaterOilDescription.FontD">
+            <summary>
+            字体
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.Bore.Column.WaterOilDescription.HorizontalAlignStyle">
+            <summary>
+            水平对齐方式
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+            <param name="parentRect"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.LoadStyle(System.String)">
+            <summary>
+            加载样式,返回一个StyleLoader对象
+            </summary>
+            <param name="styleFile"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.Excute(SmartGeoLogical.Core.ViewModels.DrillModel,System.String,System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+            执行绘制钻孔柱状图，把绘制图包装一下用以减少输入参数并采用异步为了加快执行速度
+            </summary>
+            <param name="drill">钻孔数据</param>
+            <param name="style">样式文件名称</param>
+            <param name="graphics">图片画布</param>
+            <param name="parentRect">区域范围</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.Draw(System.Drawing.Graphics,SmartGeoLogical.Render.DrawInterface.BoreData.BoreData,SmartGeoLogical.Render.Bore.Sys.StyleLoader,SmartGeoLogical.Render.DrawInterface.DrillGlobal,System.Drawing.RectangleF)">
+            <summary>
+            绘制
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.GetControls(SmartGeoLogical.Render.Bore.Sys.StyleLoader,SmartGeoLogical.Render.DrawInterface.DrillGlobal,System.Drawing.RectangleF)">
+            <summary>
+            根据样式加载器，得到钻孔元素
+            </summary>
+            <param name="styleLoad"></param>
+            <param name="drillGlobal"></param>
+            <param name="parentRect"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.LoadControl(SmartGeoLogical.Render.DrawInterface.DrillGlobal,System.Collections.Generic.List{SmartGeoLogical.Render.DrawInterface.Control},SmartGeoLogical.Render.Bore.BoreStyle.Item,SmartGeoLogical.Render.Bore.BoreStyle.Layout,System.Drawing.RectangleF)">
+            <summary>
+            根据样式加载控件
+            </summary>
+            <param name="item"></param>
+            <param name="parentLayout"></param>
+            <param name="rect"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.ConvertToBoreData(SmartGeoLogical.Core.ViewModels.DrillModel)">
+            <summary>
+            转换钻孔视图模型为钻孔数据模型，返回一个BoreData对象
+            </summary>
+            <param name="drill"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.GetLayerInfos(SmartGeoLogical.Core.ViewModels.DrillModel)">
+            <summary>
+            地层信息读取
+            </summary>
+            <param name="drill"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.GetSamplingInfos(SmartGeoLogical.Core.ViewModels.DrillModel)">
+            <summary>
+            采样点信息读取
+            </summary>
+            <param name="drill"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.GetBasicInfo(SmartGeoLogical.Core.ViewModels.DrillModel)">
+            <summary>
+            BasicInfo信息读取
+            </summary>
+            <param name="drill"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.GetUserDefinedInfo(SmartGeoLogical.Core.ViewModels.DrillModel)">
+            <summary>
+            用户自定义信息
+            </summary>
+            <param name="jToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.MainControl.SetGlobalPage(SmartGeoLogical.Render.DrawInterface.BoreData.BoreData)">
+            <summary>
+            设置默认页面设置：总页数1,返回一个DrillGlobal对象
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.Bore.Sys.StyleLoader">
+            <summary>
+            样式加载器
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.StyleLoader.#ctor">
+            <summary>
+            初始化样式器
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.StyleLoader.Load(System.String)">
+            <summary>
+             加载控件
+            </summary>
+            <param name="dataFile"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.StyleLoader.LoadItems(System.Xml.XmlNode)">
+            <summary>
+            加载子控件，通过节点获取子节点。
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.StyleLoader.LoadLayout(System.Xml.XmlNode)">
+            <summary>
+            加载布局,根据布局属性设置控件布局，获取行列划分百分比并返回一个Layout对象
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.StyleLoader.LoadItem(System.Xml.XmlNode)">
+            <summary>
+            加载 Item
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.StyleLoader.GetItemParameter(System.Xml.XmlNode)">
+            <summary>
+            获取 Item属性
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.Bore.Sys.StyleLoader.GetItemLocation(System.Xml.XmlNode)">
+            <summary>
+            根据 Item的位置属性设置 Item的 行，列，行跨度，列跨度等
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.BoreData.BoreData">
+            <summary>
+            数据模型
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.BoreData.LayerProperty">
+            <summary>
+            地层属性
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo">
+            <summary>
+            地层信息
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo.zDown">
+             <summary>
+            地层底板绝对高度
+             </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo.zUp">
+            <summary>
+            地层顶板绝对高度
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.BoreData.LayerInfo.Thickness">
+            <summary>
+            地层厚度
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.BoreData.SamplingInfo">
+            <summary>
+            采样信息，基类
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.BoreData.PointSamplingInfo">
+            <summary>
+            点采样信息
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.BoreData.AreaSamplingInfo">
+            <summary>
+            区域采样信息
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.BoreData.SampleValue">
+            <summary>
+            采样值
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.BoreData.UserDefined">
+            <summary>
+            用户自定义信息单元
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.BoreData.UserDefinedInfo">
+            <summary>
+            用户自定义信息
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.Control">
+            <summary>
+            控件类，各钻孔元素基类
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.Control.beginDepth">
+            <summary>
+            该页的起始深度、终止深度与间隔
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.Control.endDepth">
+            <summary>
+            该页的起始深度、终止深度与间隔
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.Control.interval">
+            <summary>
+            该页的起始深度、终止深度与间隔
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.Control.drillGlobal">
+            <summary>
+            全局变量
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrawInterface.Control.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            赋值控件，构造函数
+            </summary>
+            <param name="rect"></param>
+            <param name="outLineColor"></param>
+            <param name="fillColor"></param>
+            <param name="drawOutLine"></param>
+            <param name="fillInner"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrawInterface.Control.#ctor">
+            <summary>
+            初始化控件，构造函数
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrawInterface.Control.Draw(System.Drawing.Graphics,SmartGeoLogical.Render.DrawInterface.BoreData.BoreData)">
+            <summary>
+            实现IDraw接口绘制功能,得到起始、终止深度及间隔，可绘制、填充矩形框
+            </summary>
+            <param name="g"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrawInterface.Control.GetBeginAndEndDpth(System.Single)">
+            <summary>
+            计算起始深度与终止深度、间隔
+            </summary>
+            <param name="td">总深度</param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrawInterface.Control.GetFormat(SmartGeoLogical.Render.DrawInterface.AlignStyle)">
+            <summary>
+            设置文字格式，位置格式
+            </summary>
+            <param name="align"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.Control.Left">
+            <summary>
+            控件关联矩形框的位置信息，左部
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.Control.Top">
+            <summary>
+            控件关联矩形框的位置信息，顶部
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.Control.Width">
+            <summary>
+            控件关联矩形框的位置信息,宽
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.Control.Height">
+            <summary>
+            控件关联矩形框的位置信息,高
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.Control.OutLineColor">
+            <summary>
+            外包框色
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.Control.FillColor">
+            <summary>
+            填充色
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.Control.DrawOutLine">
+            <summary>
+            是否绘制外包框
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.Control.FillInner">
+            <summary>
+            是否填充矩形框
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrawInterface.Control.CtrName">
+            <summary>
+            控件名称
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.DrillGlobal">
+            <summary>
+            全局变量，绘制的状态如页深、当前页等
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.DrillGlobal.depthPerPage">
+            <summary>
+            每页的深度
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.DrillGlobal.currentPage">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.DrillGlobal.columnBeginDepth">
+            <summary>
+            控件开始位置，初设为1，为鼠标移动事件的位置显示做基础
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrawInterface.DrillGlobal.columnHeight">
+            <summary>
+            控件高度，初始设为0，为鼠标移动事件的位置显示做基础
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.AlignStyle">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.AngleStyle">
+            <summary>
+            文字角度，水平/垂直/倒垂直
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.RulePosition">
+            <summary>
+            标尺位置，左/右/两边
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.FillMode">
+            <summary>
+            填充模式，单填充/基于值的填充
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.SymbolStyle">
+            <summary>
+            曲线标记样式，圆/三角形/矩形/六边形
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.CurveCatalog">
+            <summary>
+            曲线图样式，曲线，点线，填充，点图
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawInterface.IDraw">
+            <summary>
+            绘制接口
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrawParameter">
+            <summary>
+            绘制的参数
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillDraw.Draw(SmartGeoLogical.Core.ViewModels.DrillModel,SmartGeoLogical.Render.DrawParameter)">
+            <summary>
+            绘制钻孔柱状图
+            </summary>
+            <param name="model"></param>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillDraw.DrawDrillSection(System.Collections.Generic.IEnumerable{SmartGeoLogical.Core.ViewModels.DrillModel},SmartGeoLogical.Render.ProfileParameter)">
+            <summary>
+            绘制钻孔剖面
+            </summary>
+            <param name="models"></param>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillDraw.VirtualDrillStratum(System.Collections.Generic.IEnumerable{SmartGeoLogical.Core.ViewModels.DrillModel},SmartGeoLogical.Render.ProfileParameter,System.Double)">
+            <summary>
+            按照对比剖面生成虚拟钻孔
+            </summary>
+            <param name="models">钻孔信息</param>
+            <param name="parameter">剖面参数</param>
+            <param name="distance">垂点距离第一个钻孔点的距离</param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawHelper.DrawString(System.Drawing.Graphics,System.String,SmartGeoLogical.Core.DrillSection.SPoint,SmartGeoLogical.Core.DrillSection.SPoint,System.Drawing.Color,System.Drawing.Font,System.Drawing.StringFormat)">
+            <summary>
+            绘制比例尺刻度文字
+            </summary>
+            <param name="graphics"></param>
+            <param name="text"></param>
+            <param name="startPoint"></param>
+            <param name="endPoint"></param>
+            <param name="color"></param>
+            <param name="fontD"></param>
+            <param name="format"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawHelper.DrawFillPolygon(System.Drawing.Graphics,System.Collections.Generic.List{SmartGeoLogical.Core.DrillSection.SPoint},System.String)">
+            <summary>
+            绘制不规则多变形
+            </summary>
+            <param name="graphics"></param>
+            <param name="sPoints"></param>
+            <param name="imagePath"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawHelper.DrawFillRectangleF(System.Drawing.Graphics,System.Collections.Generic.List{System.Drawing.PointF},System.String)">
+            <summary>
+            绘制矩形的图例
+            </summary>
+            <param name="graphics"></param>
+            <param name="sPoints"></param>
+            <param name="imagePath"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawScaling.ScalingX">
+            <summary>
+            X缩放
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawScaling.ScalingY">
+            <summary>
+            Y缩放
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawScaling.DisplacementX">
+            <summary>
+            X平移
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawScaling.DisplacementY">
+            <summary>
+            Y平移
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawScaling.Width">
+            <summary>
+            画布宽
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawScaling.Height">
+            <summary>
+            画布高
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawScaling.Texture">
+            <summary>
+            岩性
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.DrawScaling.CalculateParm(System.Int32,System.Collections.Generic.List{SmartGeoLogical.Core.DrillSection.SPolygon},System.Double,System.String,System.Int32)">
+            <summary>
+            计算位移和缩放，先计算缩放，再计算位移
+            </summary>
+            <param name="heigth"></param>
+            <param name="sPolygons"></param>
+            <param name="percent"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.Draw(System.Drawing.Graphics)">
+            <summary>
+            绘制钻孔剖面图
+            绘制原则：按照先画面再划线。
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.DrawDrill(System.Drawing.Graphics)">
+            <summary>
+            绘制钻孔线
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.DrawLayer(System.Drawing.Graphics)">
+            <summary>
+            绘制图层
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.DrawPolgon(System.Drawing.Graphics,System.Int32,SmartGeoLogical.Core.DrillSection.SPolygon)">
+            <summary>
+            按照点集绘制面
+            </summary>
+            <param name="graphics"></param>
+            <param name="id"></param>
+            <param name="lastPolygon"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.DrawLegend(System.Drawing.Graphics)">
+            <summary>
+            绘制图例
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.DrawScale(System.Drawing.Graphics,System.Boolean)">
+            <summary>
+            绘制比例尺的刻度
+            </summary>
+            <param name="graphics"></param>
+            <param name="left"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.DrawHead(System.Drawing.Graphics)">
+            <summary>
+            绘制钻孔剖面图标题
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.DrawScale(System.Drawing.Graphics,System.Drawing.PointF,System.Drawing.SizeF)">
+            <summary>
+            绘制比例尺
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.DrawDirectionRight(System.Drawing.Graphics)">
+            <summary>
+            绘制剖面走势
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.ProfileControl.GetLegendMessage">
+            <summary>
+            获取图例信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.Rectangle">
+            <summary>
+            剖面地层显示的范围
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.ScaleSection">
+            <summary>
+            按比例尺将剖面逻辑模型转换到剖面表达模型
+            原始数据坐标值根据比例尺缩放,
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.ViewLegend">
+            <summary>
+            图例
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.ViewScale">
+            <summary>
+            刻度尺
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.ViewScale.scalename">
+            <summary>
+            刻度尺名字
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.ViewScale.isLeft">
+            <summary>
+            判断刻度尺是否为左刻度尺，在计算和显示左右刻度尺时方法略有不同，需要区分
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.ViewScale.GetLine(System.Double,System.Double,System.Boolean)">
+            <summary>
+            刻度 每间隔5显示刻度，刻度线加长
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="isLeft"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.VPoint">
+            <summary>
+            表达模型中点的数据结构
+            </summary>
+        </member>
+        <member name="T:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.VLine">
+            <summary>
+            表达模型中刻度线的数据结构
+            </summary>
+        </member>
+        <member name="F:SmartGeoLogical.Render.DrillSectionDraw.Draw.View.ViewSection.LeftViewScale">
+            <summary>
+            剖面表达模型
+            在这里因为模型的设计想法还不够成熟，只是在这里进行了试验，
+            没有将剖面表达模型全部设计完，只是做了部分进行设计，
+            其中地层表达还是使用逻辑模型进行表达
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.VirtualDrill.GetVirtualDrill(System.Double)">
+            <summary>
+            获取虚拟钻孔地层
+            </summary>
+            <param name="distance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.VirtualDrill.GetDrillLine(System.Double)">
+            <summary>
+            获取钻孔线
+            </summary>
+            <param name="distance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.DrillSectionDraw.VirtualDrill.GetIntersectPoints(SmartGeoLogical.Core.DrillSection.SPolygon,SmartGeoLogical.Core.DrillSection.SLine)">
+            <summary>
+            获取与钻孔线相交的点
+            </summary>
+            <param name="polygon"></param>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.IDrillDraw.Draw(SmartGeoLogical.Core.ViewModels.DrillModel,SmartGeoLogical.Render.DrawParameter)">
+            <summary>
+            根据钻孔信息绘制图片
+            </summary>
+        </member>
+        <member name="M:SmartGeoLogical.Render.IDrillDraw.DrawDrillSection(System.Collections.Generic.IEnumerable{SmartGeoLogical.Core.ViewModels.DrillModel},SmartGeoLogical.Render.ProfileParameter)">
+            <summary>
+            绘制钻孔对比剖面图
+            </summary>
+            <param name="models"></param>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.IDrillDraw.VirtualDrillStratum(System.Collections.Generic.IEnumerable{SmartGeoLogical.Core.ViewModels.DrillModel},SmartGeoLogical.Render.ProfileParameter,System.Double)">
+            <summary>
+            根据钻孔对比剖面图生成虚拟钻孔的地层信息
+            </summary>
+            <param name="models"></param>
+            <param name="distance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SmartGeoLogical.Render.ObjectExpend.DrawString_2(System.Drawing.Graphics,System.String,System.Drawing.Font,System.Drawing.Brush,System.Drawing.RectangleF,System.Drawing.StringFormat)">
+            <summary>
+            读取文本，计算换行
+            </summary>
+            <param name="graphic"></param>
+            <param name="s"></param>
+            <param name="font"></param>
+            <param name="brush"></param>
+            <param name="rectangleF"></param>
+            <param name="format"></param>
+        </member>
+        <member name="P:SmartGeoLogical.Render.ProfileParameter.SubdivideCount">
+            <summary>
+            细分次数
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.ProfileParameter.pinchout">
+            <summary>
+            尖灭
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.ProfileParameter.Height">
+            <summary>
+            图片高度
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.ProfileParameter.ScaleX">
+            <summary>
+            X轴缩放比例
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.ProfileParameter.ScaleY">
+            <summary>
+            Y轴缩放比例
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.ProfileParameter.Formart">
+            <summary>
+            输出文件类型
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.ProfileParameter.DrillLineElevation">
+            <summary>
+            钻孔间的高程
+            </summary>
+        </member>
+        <member name="P:SmartGeoLogical.Render.ProfileParameter.Texture">
+            <summary>
+            使用的纹理
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
