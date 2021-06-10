@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\MyGit\\leaningCode\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj": {}
+    "F:\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj": {}
   },
   "projects": {
-    "F:\\MyGit\\leaningCode\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj": {
+    "F:\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\MyGit\\leaningCode\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
+        "projectUniqueName": "F:\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
         "projectName": "BoreholeHistogram",
-        "projectPath": "F:\\MyGit\\leaningCode\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
+        "projectPath": "F:\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
         "packagesPath": "C:\\Users\\210342\\.nuget\\packages\\",
-        "outputPath": "F:\\MyGit\\leaningCode\\BoreholeHistogram\\BoreholeHistogram\\obj\\",
+        "outputPath": "F:\\BoreholeHistogram\\BoreholeHistogram\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\DX\\dx\\Offline Packages"
@@ -45,6 +45,24 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "NetTopologySuite": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.1, )"
+            },
+            "Volo.Abp.Core": {
+              "target": "Package",
+              "version": "[3.3.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
