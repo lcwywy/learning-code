@@ -3,6 +3,9 @@ using System.Drawing;
 
 namespace BoreholeHistogram.Control.Label
 {
+    /// <summary>
+    /// 标签类
+    /// </summary>
     class Label :Control
     {
         #region 属性
@@ -10,7 +13,7 @@ namespace BoreholeHistogram.Control.Label
         /// <summary>
         /// 标签文本
         /// </summary>
-        public Text.Text LabelText { get { return labelText; } set { labelText = value; } }
+        public Text.TextFormat Text { get { return text; } set { text = value; } }
 
         #endregion
 
@@ -19,7 +22,7 @@ namespace BoreholeHistogram.Control.Label
         /// <summary>
         /// 标签文本
         /// </summary>
-        private Text.Text labelText;
+        private Text.TextFormat text;
 
         #endregion
 
@@ -37,16 +40,27 @@ namespace BoreholeHistogram.Control.Label
         public Label(RectangleF rect, Color outLineColor, Color fillColor, bool drawOutLine, bool fillInner, string name)
             :base(rect, outLineColor, fillColor, drawOutLine, fillInner, name)
         {
-            labelText = new Text.Text();
+            text = new Text.TextFormat();
         }
 
         #endregion
 
         #region 标签绘制
 
+        /// <summary>
+        /// 绘制标签
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="data"></param>
         public override void Draw(Graphics g, BoreData.BoreData data)
         {
+            //绘制矩形框
             base.Draw(g, data);
+
+            string labelText;
+            labelText = this.CtrName;
+
+            g.DrawString(labelText, text.FontD, new SolidBrush(text.FontColor), Rect, text.GetFormat(text.FontAlign));   //暂时没考虑下标签有些文本换行问题
         }
 
         #endregion

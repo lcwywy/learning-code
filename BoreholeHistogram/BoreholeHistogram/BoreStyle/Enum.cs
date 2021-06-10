@@ -1,27 +1,29 @@
 ﻿namespace BoreholeHistogram.BoreStyle
 {
     /// <summary>
-    /// 对齐方式
+    /// 文本文字绘制位置
     /// </summary>
     public enum AlignStyle
     {
-        Left = 1,
-        Center = 2,
-        Right = 3,
-        
-        NearNear=4,
-        NearCenter=5,
-        NearFar = 6,
-        CenterNear=7,
-        CenterCenter = 8,
-        CenterFar =9,
+        #region 相对矩阵绘制
 
-        FarNear =10,
-        FarCenter = 11,
-        FarFar = 12,
+        NearCenter = 1,   //中左
+        CenterCenter = 2, //正中        
+        FarCenter = 3,    //中右
 
+        NearNear = 4,     //左上
+        CenterNear = 5,   //中上
+        FarNear = 6,      //右上
 
+        NearFar = 7,      //左下
+        CenterFar = 8,    //中下
+        FarFar = 9,       //右下
+
+        #endregion
+
+        Point = 0,        //点位绘制
     }
+
     /// <summary>
     /// 文字角度，水平/垂直/倒垂直
     /// </summary>
