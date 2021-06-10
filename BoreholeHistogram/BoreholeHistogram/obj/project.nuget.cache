@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ys0LfCnbtY5xaqWb3N34gRHV/KMXVj57mfenrZj3qa3jVunReEahLT6UolklLrxjfxQKNUa0hfRg0NPiCmWT1w==",
+  "dgSpecHash": "9hpU3c0WRd7DIhmcf+gjY929Ai9bNLMULOfCV0pE547jJm8HAu9I61J4vrjRjBxCMsk9M7d28RJ1nnIiRkpivA==",
   "success": true,
-  "projectFilePath": "F:\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
+  "projectFilePath": "F:\\MyGit\\leaningCode\\BoreholeHistogram\\BoreholeHistogram\\BoreholeHistogram.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\210342\\.nuget\\packages\\jetbrains.annotations\\2020.1.0\\jetbrains.annotations.2020.1.0.nupkg.sha512",
     "C:\\Users\\210342\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.8\\microsoft.extensions.configuration.3.1.8.nupkg.sha512",

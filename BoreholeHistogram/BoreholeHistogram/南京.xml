@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Pannel>
+  <Row>
+    <RowDefinition height="200px"/>
+    <RowDefinition height="100"/>
+  </Row>
+  
+  <Pannel row="0" col="0">
+    <Row>
+      <RowDefinition height="80px"/>
+      <RowDefinition height="30px"/>
+      <RowDefinition height="30px"/>
+      <RowDefinition height="30px"/>
+      <RowDefinition height="30px"/>
+    </Row>
+    
+    <Label row="0" col="0" >
+      <name>钻孔柱状图</name>
+      <parameters>
+        <Parameter value="宋体,24" name="FontD"/>
+        <Parameter value="Brown" name="FontColor"/>
+      </parameters>
+    </Label>
+    
+    <SingleText row="1" col="0">
+      <Column>
+        <ColumnDefinition width="12"/>
+        <ColumnDefinition width="88"/>
+      </Column>      
+      <name>工程编号</name>
+      <parameters>
+        <Parameter value="宋体,9" name="FontD"/>
+        <Parameter value="1" name="Align"/>
+      </parameters>     
+    </SingleText>
+    
+    <Pannel row="2" col="0">
+      <Column>
+        <ColumnDefinition width="50"/>
+        <ColumnDefinition width="50"/>      
+      </Column>
+      
+      <SingleText row="0" col="0">
+        <Column>
+          <ColumnDefinition width="12"/>
+          <ColumnDefinition width="38"/>
+        </Column>
+        <name>工程名称</name>
+        <parameters>
+          <Parameter value="宋体,9" name="FontD"/>
+          <Parameter value="1" name="Align"/>
+        </parameters>
+      </SingleText>
+      
+      <SingleText row="0" col="1">
+        <Column>
+          <ColumnDefinition width="12"/>
+          <ColumnDefinition width="38"/>
+        </Column>
+        <name>钻孔编号</name>
+        <parameters>
+          <Parameter value="宋体,9" name="FontD"/>
+          <Parameter value="1" name="Align"/>   <!--聚合的话，标签难改-->
+        </parameters>
+      </SingleText>
+    </Pannel>
+    
+    <Pannel row="3" col="0">
+      <Column>
+        <ColumnDefinition width="50"/>
+        <ColumnDefinition width="24"/>
+        <ColumnDefinition width="26"/>
+      </Column>
+      
+      <SingleText row="0" col="0">
+        <Column>
+          <ColumnDefinition width="12"/>
+          <ColumnDefinition width="38"/>
+        </Column>
+        <name>孔口高程</name>
+        <parameters>
+          <Parameter value="宋体,9" name="FontD"/>
+          <Parameter value="1" name="Align"/>
+        </parameters>
+      </SingleText>
+
+      <SingleText row="0" col="1">
+        <Column>
+          <ColumnDefinition width="12"/>
+          <ColumnDefinition width="12"/>
+        </Column>
+        <name>开工日期</name>
+        <parameters>
+          <Parameter value="宋体,9" name="FontD"/>
+          <Parameter value="1" name="Align"/>
+        </parameters>
+      </SingleText>
+
+      <SingleText row="0" col="2">
+        <Column>
+          <ColumnDefinition width="14"/>
+          <ColumnDefinition width="12"/>
+        </Column>
+        <name>稳定水位深度</name>
+        <parameters>
+          <Parameter value="宋体,9" name="FontD"/>
+          <Parameter value="1" name="Align"/>
+        </parameters>
+      </SingleText>      
+    </Pannel>
+  
+    <Pannel row="4" col="0">
+      <Column>
+        <ColumnDefinition width="50"/>
+        <ColumnDefinition width="24"/>
+        <ColumnDefinition width="26"/>
+      </Column>
+
+      <SingleText row="0" col="0">
+        <Column>
+          <ColumnDefinition width="12"/>
+          <ColumnDefinition width="38"/>
+        </Column>
+        <name>孔口直径</name>
+        <parameters>
+          <Parameter value="宋体,9" name="FontD"/>
+          <Parameter value="1" name="Align"/>
+        </parameters>
+      </SingleText>
+
+      <SingleText row="0" col="1">
+        <Column>
+          <ColumnDefinition width="12"/>
+          <ColumnDefinition width="12"/>
+        </Column>
+        <name>竣工日期</name>
+        <parameters>
+          <Parameter value="宋体,9" name="FontD"/>
+          <Parameter value="1" name="Align"/>
+        </parameters>
+      </SingleText>
+
+      <SingleText row="0" col="2">
+        <Column>
+          <ColumnDefinition width="14"/>
+          <ColumnDefinition width="12"/>
+        </Column>
+        <name>测量水位日期</name>
+        <parameters>
+          <Parameter value="宋体,9" name="FontD"/>
+          <Parameter value="1" name="Align"/>
+        </parameters>
+      </SingleText>
+    </Pannel>
+  </Pannel>
+  
+  <Pannel row="1" col="0">
+    <Column>
+      <Column>
+        <ColumnDefinition width="4"/>
+        <ColumnDefinition width="4"/>
+        <ColumnDefinition width="4"/>
+        <ColumnDefinition width="4"/>
+        <ColumnDefinition width="8"/>
+        <ColumnDefinition width="50"/>
+        <ColumnDefinition width="14"/>
+        <ColumnDefinition width="12"/>
+      </Column>
+    </Column>
+    
+    <MultivaluedText row="0" col="0">
+      <Row >
+        <RowDefinition height="60px"/>
+        <RowDefinition height="100"/>
+      </Row>
+      <name>地层\r\n编号</name>
+      <Parameters>
+        <Parameter value="宋体，9" name="FontD"/>
+        <Parameter value="8" name="Align"/>
+      </Parameters>
+    </MultivaluedText>
+    
+    <MultivaluedText row="0" col="1">
+      <Row >
+        <RowDefinition height="60px"/>
+        <RowDefinition height="100"/>
+      </Row>
+      <name>地层\r\n标高\r\n(m)</name>
+      <Parameters>
+        <Parameter value="宋体，9" name="FontD"/>
+        <Parameter value="9" name="Align"/>
+      </Parameters>
+    </MultivaluedText>
+      
+    <MultivaluedText row="0" col="2">
+      <Row >
+        <RowDefinition height="60px"/>
+        <RowDefinition height="100"/>
+      </Row>
+      <name>地层\r\n深度\r\n(m)</name>
+      <Parameters>
+        <Parameter value="宋体，9" name="FontD"/>
+        <Parameter value="9" name="Align"/>
+      </Parameters>
+    </MultivaluedText>
+  
+    <MultivaluedText row="0" col="3">
+      <Row >
+        <RowDefinition height="60px"/>
+        <RowDefinition height="100"/>
+      </Row>
+      <name>分层\r\n厚度\r\n(m)</name>
+      <Parameters>
+        <Parameter value="宋体，9" name="FontD"/>
+        <Parameter value="9" name="Align"/>
+      </Parameters>
+    </MultivaluedText>
+  
+    <TextureFill row="0" col="4">
+      <Row >
+        <RowDefinition height="60px"/>
+        <RowDefinition height="100"/>
+      </Row>
+      <name>柱状图\r\n1:100</name>      
+    </TextureFill>
+    
+    <MultivalueText row="0" col="5">
+      <Row >
+        <RowDefinition height="60px"/>
+        <RowDefinition height="100"/>
+      </Row>
+      <name>岩土名称及其特征</name>
+      <Parameters>
+        <Parameter value="宋体，9" name="FontD"/>
+        <Parameter value="9" name="Align"/>
+      </Parameters>
+    </MultivalueText>
+   
+    <MultivalueText row="0" col="6">
+      <Row >
+        <RowDefinition height="60px"/>
+        <RowDefinition height="100"/>
+      </Row>
+      <name>取样编码与深度</name>
+      <Parameters>
+        <Parameter value="宋体，9" name="FontD"/>
+        <Parameter value="9" name="Align"/>
+      </Parameters>
+    </MultivalueText>
+  
+    <Histogram>
+      <Row >
+        <RowDefinition height="60px"/>
+        <RowDefinition height="100"/>
+      </Row>
+      <name>标贯击数（击）\r\n与深度（m）</name>
+      <Parameters>
+        <Parameter value="宋体，9" name="FontD"/>
+        <Parameter value="9" name="Align"/>
+      </Parameters>
+    </Histogram>  
+  
+  </Pannel>   
+</Pannel>
