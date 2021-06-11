@@ -60,7 +60,7 @@
         <name>钻孔编号</name>
         <parameters>
           <Parameter value="宋体,9" name="FontD"/>
-          <Parameter value="1" name="Align"/>   <!--聚合的话，标签难改-->
+          <Parameter value="1" name="Align"/>  
         </parameters>
       </SingleText>
     </Pannel>
