@@ -48,6 +48,9 @@ namespace BoreholeHistogram.Control.Text
 
         #region 构造函数
 
+        /// <summary>
+        /// 初始化文本格式，默认宋体9号，黑色，居正中
+        /// </summary>
         public TextFormat()
         {
             this.fontD = new Font("宋体",9);
@@ -55,6 +58,12 @@ namespace BoreholeHistogram.Control.Text
             this.fontAlign = BoreStyle.AlignStyle.CenterCenter;
         }
 
+        /// <summary>
+        /// 自定义初始化文本格式
+        /// </summary>
+        /// <param name="fontd"></param>
+        /// <param name="fontcolor"></param>
+        /// <param name="fontalign"></param>
         public TextFormat(Font fontd, Color fontcolor, BoreStyle.AlignStyle fontalign)
         {
             this.fontD = fontd;

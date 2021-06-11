@@ -57,6 +57,7 @@ namespace BoreholeHistogram.Control.Label
             //绘制矩形框
             base.Draw(g, data);
 
+            //标签文本
             string labelText;
             labelText = this.CtrName;
 
