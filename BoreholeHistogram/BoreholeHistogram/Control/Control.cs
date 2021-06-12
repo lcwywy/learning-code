@@ -40,10 +40,6 @@ namespace BoreholeHistogram.Control
         /// </summary>
         public Color OutLineColor { get { return outLineColor; } set { outLineColor = value; } }
 
-        /// <summary>
-        /// 控件距左边的距离
-        /// </summary>
-
         #endregion
 
         #region 控件字段
@@ -52,12 +48,10 @@ namespace BoreholeHistogram.Control
         /// 控件名称
         /// </summary>
         private string ctrName;
-
         /// <summary>
         /// 控件所在矩形框
         /// </summary>
         private RectangleF rect;
-
         /// <summary>
         /// 控件边框颜色、内填充颜色
         /// </summary>

@@ -29,7 +29,7 @@ namespace BoreholeHistogram.Control.Label
         #region 构造函数
         
         /// <summary>
-        /// 标签构造函数，初始化一个标签的属性设置
+        /// 初始化标签的参数
         /// </summary>
         /// <param name="rect"></param>
         /// <param name="outLineColor"></param>

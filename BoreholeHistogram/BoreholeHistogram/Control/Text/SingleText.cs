@@ -30,7 +30,16 @@ namespace BoreholeHistogram.Control.Text
         #endregion
 
         #region 构造函数
-
+        
+        /// <summary>
+        /// 初始化单值文本控件的参数
+        /// </summary>
+        /// <param name="rect"></param>
+        /// <param name="outLineColor"></param>
+        /// <param name="fillColor"></param>
+        /// <param name="drawOutLine"></param>
+        /// <param name="fillInner"></param>
+        /// <param name="name"></param>
         public SingleText(RectangleF rect, Color outLineColor, Color fillColor, bool drawOutLine, bool fillInner, string name)
             : base(rect, outLineColor, fillColor, drawOutLine, fillInner, name)
         {
@@ -41,6 +50,11 @@ namespace BoreholeHistogram.Control.Text
 
         #region 单值文本绘制
 
+        /// <summary>
+        /// 绘制单值文本
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="data"></param>
         public override void Draw(Graphics g, BoreData.BoreData data)
         {
             base.Draw(g, data);
