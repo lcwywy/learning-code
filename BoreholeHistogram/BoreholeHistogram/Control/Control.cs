@@ -8,7 +8,7 @@ namespace BoreholeHistogram.Control
     /// <summary>
     /// 控件基类
     /// </summary>
-    class Control:IDraw
+     public class Control:IDraw
     {
         #region 控件属性
 

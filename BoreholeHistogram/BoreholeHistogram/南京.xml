@@ -14,7 +14,7 @@
       <RowDefinition height="30px"/>
     </Row>
     
-    <Label row="0" col="0" >
+    <Label row="0" col="0">
       <name>钻孔柱状图</name>
       <parameters>
         <Parameter value="宋体,24" name="FontD"/>
@@ -22,12 +22,12 @@
       </parameters>
     </Label>
     
-    <SingleText row="1" col="0">
+    <SingleText row="1" col="0" name="工程编号">
       <Column>
         <ColumnDefinition width="12"/>
         <ColumnDefinition width="88"/>
       </Column>      
-      <name>工程编号</name>
+      <name>formerid</name>
       <parameters>
         <Parameter value="宋体,9" name="FontD"/>
         <Parameter value="1" name="Align"/>
@@ -40,24 +40,24 @@
         <ColumnDefinition width="50"/>      
       </Column>
       
-      <SingleText row="0" col="0">
+      <SingleText row="0" col="0" name="工程名称">
         <Column>
           <ColumnDefinition width="12"/>
           <ColumnDefinition width="38"/>
         </Column>
-        <name>工程名称</name>
+        <name>projectname</name>
         <parameters>
           <Parameter value="宋体,9" name="FontD"/>
           <Parameter value="1" name="Align"/>
         </parameters>
       </SingleText>
       
-      <SingleText row="0" col="1">
+      <SingleText row="0" col="1" name="钻孔编号">
         <Column>
           <ColumnDefinition width="12"/>
           <ColumnDefinition width="38"/>
         </Column>
-        <name>钻孔编号</name>
+        <name>drillid</name>
         <parameters>
           <Parameter value="宋体,9" name="FontD"/>
           <Parameter value="1" name="Align"/>  
@@ -72,36 +72,36 @@
         <ColumnDefinition width="26"/>
       </Column>
       
-      <SingleText row="0" col="0">
+      <SingleText row="0" col="0" name="孔口高程">
         <Column>
           <ColumnDefinition width="12"/>
           <ColumnDefinition width="38"/>
         </Column>
-        <name>孔口高程</name>
+        <name>DrillZ</name>
         <parameters>
           <Parameter value="宋体,9" name="FontD"/>
           <Parameter value="1" name="Align"/>
         </parameters>
       </SingleText>
 
-      <SingleText row="0" col="1">
+      <SingleText row="0" col="1" name="开工日期">
         <Column>
           <ColumnDefinition width="12"/>
           <ColumnDefinition width="12"/>
         </Column>
-        <name>开工日期</name>
+        <name>stratumdata</name>
         <parameters>
           <Parameter value="宋体,9" name="FontD"/>
           <Parameter value="1" name="Align"/>
         </parameters>
       </SingleText>
 
-      <SingleText row="0" col="2">
+      <SingleText row="0" col="2" name="稳定水位深度">
         <Column>
           <ColumnDefinition width="14"/>
           <ColumnDefinition width="12"/>
         </Column>
-        <name>稳定水位深度</name>
+        <name>waterdepth</name>
         <parameters>
           <Parameter value="宋体,9" name="FontD"/>
           <Parameter value="1" name="Align"/>
@@ -116,36 +116,36 @@
         <ColumnDefinition width="26"/>
       </Column>
 
-      <SingleText row="0" col="0">
+      <SingleText row="0" col="0" name="孔口直径">
         <Column>
           <ColumnDefinition width="12"/>
           <ColumnDefinition width="38"/>
         </Column>
-        <name>孔口直径</name>
+        <name>anelevation</name>
         <parameters>
           <Parameter value="宋体,9" name="FontD"/>
           <Parameter value="1" name="Align"/>
         </parameters>
       </SingleText>
 
-      <SingleText row="0" col="1">
+      <SingleText row="0" col="1" name="竣工日期">
         <Column>
           <ColumnDefinition width="12"/>
           <ColumnDefinition width="12"/>
         </Column>
-        <name>竣工日期</name>
+        <name>endtime</name>
         <parameters>
           <Parameter value="宋体,9" name="FontD"/>
           <Parameter value="1" name="Align"/>
         </parameters>
       </SingleText>
 
-      <SingleText row="0" col="2">
+      <SingleText row="0" col="2" name="测量水位日期">
         <Column>
           <ColumnDefinition width="14"/>
           <ColumnDefinition width="12"/>
         </Column>
-        <name>测量水位日期</name>
+        <name>waterdata</name>
         <parameters>
           <Parameter value="宋体,9" name="FontD"/>
           <Parameter value="1" name="Align"/>
@@ -168,75 +168,75 @@
       </Column>
     </Column>
     
-    <MultivaluedText row="0" col="0">
+    <MultivaluedText row="0" col="0" name="地层编号">
       <Row >
         <RowDefinition height="60px"/>
         <RowDefinition height="100"/>
       </Row>
-      <name>地层\r\n编号</name>
+      <name>LithName</name>
       <Parameters>
         <Parameter value="宋体，9" name="FontD"/>
         <Parameter value="8" name="Align"/>
       </Parameters>
     </MultivaluedText>
     
-    <MultivaluedText row="0" col="1">
+    <MultivaluedText row="0" col="1" name="地层标高（m）">
       <Row >
         <RowDefinition height="60px"/>
         <RowDefinition height="100"/>
       </Row>
-      <name>地层\r\n标高\r\n(m)</name>
+      <name>ZDown</name>
       <Parameters>
         <Parameter value="宋体，9" name="FontD"/>
         <Parameter value="9" name="Align"/>
       </Parameters>
     </MultivaluedText>
       
-    <MultivaluedText row="0" col="2">
+    <MultivaluedText row="0" col="2" name="地层深度（m）">
       <Row >
         <RowDefinition height="60px"/>
         <RowDefinition height="100"/>
       </Row>
-      <name>地层\r\n深度\r\n(m)</name>
+      <name>LayerBottom</name>
       <Parameters>
         <Parameter value="宋体，9" name="FontD"/>
         <Parameter value="9" name="Align"/>
       </Parameters>
     </MultivaluedText>
   
-    <MultivaluedText row="0" col="3">
+    <MultivaluedText row="0" col="3" name="分层厚度(m)">
       <Row >
         <RowDefinition height="60px"/>
         <RowDefinition height="100"/>
       </Row>
-      <name>分层\r\n厚度\r\n(m)</name>
+      <name>Thickness</name>
       <Parameters>
         <Parameter value="宋体，9" name="FontD"/>
         <Parameter value="9" name="Align"/>
       </Parameters>
     </MultivaluedText>
   
-    <TextureFill row="0" col="4">
+    <Lithority row="0" col="4" name="柱状图1：100">
       <Row >
         <RowDefinition height="60px"/>
         <RowDefinition height="100"/>
       </Row>
-      <name>柱状图\r\n1:100</name>      
-    </TextureFill>
+      <name>Lith</name>      
+    </Lithority>
     
-    <MultivalueText row="0" col="5">
+    <MultivalueText row="0" col="5" name="岩土名称及其特征">
       <Row >
         <RowDefinition height="60px"/>
         <RowDefinition height="100"/>
       </Row>
-      <name>岩土名称及其特征</name>
+      <name>LayerDescription</name>
       <Parameters>
         <Parameter value="宋体，9" name="FontD"/>
         <Parameter value="9" name="Align"/>
       </Parameters>
     </MultivalueText>
    
-    <MultivalueText row="0" col="6">
+    <CombinatorialText row="0" col="6" name="取样编码与深度">
       <Row >
         <RowDefinition height="60px"/>
         <RowDefinition height="100"/>
@@ -246,18 +246,14 @@
         <Parameter value="宋体，9" name="FontD"/>
         <Parameter value="9" name="Align"/>
       </Parameters>
-    </MultivalueText>
+    </CombinatorialText>
   
-    <Histogram>
+    <Histogram row="0" col="7" name="标贯击数（击）与深度（m）">
       <Row >
         <RowDefinition height="60px"/>
         <RowDefinition height="100"/>
       </Row>
-      <name>标贯击数（击）\r\n与深度（m）</name>
-      <Parameters>
-        <Parameter value="宋体，9" name="FontD"/>
-        <Parameter value="9" name="Align"/>
-      </Parameters>
+      <name>标贯击数</name>
     </Histogram>  
   
   </Pannel>   
