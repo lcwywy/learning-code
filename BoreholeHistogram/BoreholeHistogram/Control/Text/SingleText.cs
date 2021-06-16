@@ -26,7 +26,7 @@ namespace BoreholeHistogram.Control.Text
         /// 文本值格式        
         /// </summary>
         private TextFormat text;
-
+        
         #endregion
 
         #region 构造函数
