@@ -2,3 +2,7 @@ F:\BoreholeHistogram\BoreholeHistogram\obj\Debug\netcoreapp3.1\BoreholeHistogram
 F:\BoreholeHistogram\BoreholeHistogram\obj\Debug\netcoreapp3.1\BoreholeHistogram.AssemblyInfoInputs.cache
 F:\BoreholeHistogram\BoreholeHistogram\obj\Debug\netcoreapp3.1\BoreholeHistogram.AssemblyInfo.cs
 F:\BoreholeHistogram\BoreholeHistogram\obj\Debug\netcoreapp3.1\BoreholeHistogram.csproj.CoreCompileInputs.cache
+F:\MyGit\leaningCode\BoreholeHistogram\BoreholeHistogram\obj\Debug\netcoreapp3.1\BoreholeHistogram.csprojAssemblyReference.cache
+F:\MyGit\leaningCode\BoreholeHistogram\BoreholeHistogram\obj\Debug\netcoreapp3.1\BoreholeHistogram.AssemblyInfoInputs.cache
+F:\MyGit\leaningCode\BoreholeHistogram\BoreholeHistogram\obj\Debug\netcoreapp3.1\BoreholeHistogram.AssemblyInfo.cs
+F:\MyGit\leaningCode\BoreholeHistogram\BoreholeHistogram\obj\Debug\netcoreapp3.1\BoreholeHistogram.csproj.CoreCompileInputs.cache

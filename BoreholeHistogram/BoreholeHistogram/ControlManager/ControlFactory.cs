@@ -49,7 +49,7 @@ namespace BoreholeHistogram.ControlManager
                         {
                             foreach (XmlNode node1 in childNode.ChildNodes)
                             {
-
+                                
                             }
                         }
                         else if (childNode.Name == "Row")
